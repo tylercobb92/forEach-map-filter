@@ -7,9 +7,11 @@ Examples:
 
 */
 function doubleValues(arr) {
-    return Array.from(arr.forEach(function (value, index, array) {
-        return value * 2;
-    }))
+    let newArr = [];
+    arr.forEach(function (num) {
+        newArr.push(num * 2)
+    })
+    return newArr;
 }
 
 /*
@@ -21,7 +23,13 @@ Examples:
 
 */
 function onlyEvenValues(arr) {
-
+    let newArr = [];
+    arr.forEach(function (num) {
+        if (num % 2 === 0) {
+            newArr.push(num)
+        }
+    })
+    return newArr;
 }
 
 /*
@@ -33,7 +41,11 @@ Examples:
 
 */
 function showFirstAndLast(arr) {
-
+    let newArr = [];
+    arr.forEach(function (value) {
+        newArr.push(value[0] + value[value.length - 1]);
+    })
+    return newArr;
 }
 
 /*
@@ -46,7 +58,10 @@ Examples:
 
 */
 function addKeyAndValue(arr, key, value) {
-
+    arr.forEach(function (val) {
+        val[key] = value;
+    })
+    return arr;
 }
 
 /*
@@ -60,7 +75,21 @@ Examples:
     vowelCount('I Am awesome and so are you') // {i: 1, a: 4, e: 3, o: 3, u: 1};
 */
 function vowelCount(str) {
+    const vowels = 'aeiou';
+    let newArr = str.split('')
+    let obj = {};
 
+    newArr.forEach(function (letter) {
+        let lowerCased = letter.toLowerCase();
+        if (vowels.indexOf(lowerCased) !== -1) {
+            if (obj[lowerCased]) {
+                obj[lowerCased]++;
+            } else {
+                obj[lowerCased] = 1;
+            }
+        }
+    })
+    return obj;
 }
 
 /*
@@ -100,9 +129,7 @@ Examples:
 */
 
 function extractKey(arr, key) {
-    return arr.map(function (value) {
-        return arr.key
-    })
+
 }
 
 /*
